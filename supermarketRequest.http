@@ -1,0 +1,11 @@
+POST http://localhost:8080/supermarket/checkout
+Content-Type: application/json
+
+{ "skus": ["A","B","A","B","A","A","A"] }
+
+###
+
+POST http://localhost:8080/supermarket/checkout
+Content-Type: application/json
+
+{ "skus": [] }

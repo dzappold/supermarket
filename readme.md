@@ -7,30 +7,26 @@ The idea is let tdd to guide us through **architecture and domain design** in a 
 
 Inspired on [supermarket code kata](http://codekata.com/kata/kata01-supermarket-pricing/)
 
-There is no implementation because this repository is the kata description itself, made for an internal exercise in N26,
- feel free to create PRs for your solutions or to use it in your own katas.
-
 ## Kata description
 
 [Slides](https://slides.com/albertllousasortiz-1/supermarket-checkout-kata)
 
 We are going to implement a supermarket checkout, that basically calculates the total price given a list of **products** a
- customer have on the **cart**.
+customer have on the **cart**.
    
-In order to do that we will need and stock of the supermarket, it should have this information, at least:
+To do that we will need and stock of the supermarket, it should have this information, at least:
 
 ```bash
 SKU     Price   Description 
 ---------------------------
   A      2.00     Potato 
   B      4.00     Tomato
+  ...    ...      ...
 ```
 
-There is no any restriction on how implement the stock. 
+There are no restrictions on how to implement the stock. 
 
-And these are the expected input/outputs for the app.
-
-For the following API call:
+Here are some examples of expected input and output for the app.
 
 ```bash
 curl --request POST http://localhost:8080/supermarket/checkout \
@@ -48,9 +44,9 @@ The output should be `201 CREATED` with body:
 ```
    
 **Notes**: 
-* Rule: Write prod code in terms of architecture and domain
+* Rule: Write production code in terms of architecture and domain
 * SKUs are [Stock keeping units](https://en.wikipedia.org/wiki/Stock_keeping_unit)
-* Should respond with 204 for an empty cart request, `{ "skus": [] }` 
+* Should respond with `204 NO_CONTENT` for an empty cart request, `{ "skus": [] }` 
 
 Have fun!
 
@@ -61,28 +57,29 @@ Have fun!
 * Don't mock everything (double testing is ok)
 * SoC: Separate orchestration from calculation
 * YAGNI
-* Don't go always by the book
 
 ## Where to start
 
-We have provided the exercise with the [acceptance test](./src/test/kotlin/de/tech26/supermarket/acceptance/CalculateCartTotalAcceptanceTest.kt) already
+We have provided the exercise with the [acceptance test](./src/test/kotlin/tdd.study.group/supermarket/acceptance/CalculateCartTotalAcceptanceTest.kt) already
  set up, we don't want to waste time designing an API.
 
-So jump [here](./src/test/kotlin/de/tech26/supermarket/changemeplease/CheckoutControllerTest.kt) and start coding.
+So jump [here](./src/test/kotlin/tdd.study.group/supermarket/changemeplease/CheckoutControllerTest.kt) and start coding.
 
 ## Bonus: Second part
 
-Let's finish first the previous one ;)
+Let's finish first the previous one 😏
+Think about new features / variations like: discount system, out of stock ...
 
 ## Tech stack
 
 * Kotlin
-* [Spring boot](https://spring.io/projects/spring-boot)
+* http4k
 * Testing libraries/frameworks:
     * [JUnit 5](https://junit.org/junit5/docs/current/user-guide/)
-    * [Assertj](https://joel-costigliola.github.io/assertj/)
+    * [hamkrest]()
+    * [kotest](supermarketRequest.http://kotest.io)
     * [Mockk](https://mockk.io/)
-    * [REST Assured](http://rest-assured.io/)
+    * [ArchUnit]()
     
 They are just the most common used, feel free to add/remove/change any dependency that fits to you
 
