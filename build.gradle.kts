@@ -17,7 +17,6 @@ java.sourceCompatibility = JavaVersion.VERSION_11
 repositories {
     mavenLocal()
     mavenCentral()
-    jcenter()
     google()
 }
 //https://docs.gradle.org/6.0.1/userguide/java_testing.html#sec:configuring_java_integration_tests/

@@ -75,7 +75,11 @@ fun changeMeController(
     )
 }
 
-private fun calculateCartTotal(inventory: Map<String, Double>, skus: List<String>, repository: ProductRepository): Result {
+private fun calculateCartTotal(
+    inventory: Map<String, Double>,
+    skus: List<String>,
+    repository: ProductRepository
+): Result {
 
     val total = skus.map { sku -> inventory[sku] ?: throw NoSuchElementException("element does not exist") }.sum()
     return Result("%.2f".format(ENGLISH, total))
