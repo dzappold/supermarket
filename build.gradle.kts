@@ -87,6 +87,7 @@ tasks {
             jvmTarget = "11"
             javaParameters = true
             freeCompilerArgs = listOf("-Xjvm-default=all")
+            //useIR = true
         }
     }
 
@@ -174,7 +175,7 @@ tasks.dependencyUpdates {
 }
 
 fun isStable(version: String): Boolean {
-    val stableKeyword = listOf("RELEASE", "FINAL", "GA", "M").any { version.toUpperCase().contains(it) }
+    val stableKeyword = listOf("RELEASE", "FINAL", "GA" /*, "M"*/).any { version.toUpperCase().contains(it) }
     val regex = "^[0-9,.v-]+(-r)?$".toRegex()
     return stableKeyword || regex.matches(version)
 }

@@ -1,4 +1,4 @@
-package tdd.study.group.supermarket.acceptance
+package tdd.study.group.supermarket.changemeplease
 
 import org.http4k.core.HttpHandler
 import org.http4k.core.Method
@@ -9,9 +9,6 @@ import org.http4k.kotest.shouldHaveStatus
 import org.junit.jupiter.api.MethodOrderer.Random
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestMethodOrder
-import tdd.study.group.supermarket.changemeplease.Checkout
-import tdd.study.group.supermarket.changemeplease.checkoutLens
-import tdd.study.group.supermarket.changemeplease.shouldHaveEmptyBody
 
 @TestMethodOrder(Random::class)
 abstract class ChangeMeControllerContract {
