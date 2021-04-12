@@ -39,6 +39,7 @@ dependencies {
     val kotestVersion: String by project
     val mockkVersion: String by project
     val moshiVersion: String by project
+    val cucumberVersion: String by project
 
     implementation(kotlin("reflect"))
     implementation(platform("org.http4k:http4k-bom:$http4kVersion"))
@@ -74,6 +75,11 @@ dependencies {
     testImplementation("org.http4k:http4k-testing-webdriver")
     testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation("org.junit.jupiter:junit-jupiter-api")
+
+    testImplementation("io.cucumber:cucumber-junit-platform-engine:$cucumberVersion")
+    testImplementation("io.cucumber:cucumber-jvm:$cucumberVersion")
+    testImplementation("io.cucumber:cucumber-java8:$cucumberVersion")
+    testImplementation("io.cucumber:cucumber-junit:$cucumberVersion")
 
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
     testRuntimeOnly("org.junit.platform:junit-platform-console")
